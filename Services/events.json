@@ -12,7 +12,7 @@
     "Description": "A very clumsy thief tries to steal your food. You catch him. He tries to cut you, fails, tries to run, trips and drops his gauntlet.",
     "HealthModifier": -10,
     "ArmorModifier": 20,
-    "FoodModifier": 0,
+    "FoodModifier": -5,
     "Type": 0
   },
   {
@@ -76,7 +76,7 @@
     "Description": "You come accross a trader camp. They invite you to rest near the fire.",
     "HealthModifier": 10,
     "ArmorModifier": 0,
-    "FoodModifier": 0,
+    "FoodModifier": -5,
     "Type": 1
   },
   {
@@ -84,7 +84,7 @@
     "Description": "A frog asks you to kiss it so that it can become a princess. You kiss it. Nothing happens.",
     "HealthModifier": 0,
     "ArmorModifier": 0,
-    "FoodModifier": 0,
+    "FoodModifier": -5,
     "Type": 0
   },
   {
@@ -92,7 +92,7 @@
     "Description": "A pack of Wolves appear. They attack you but you manage to climb a tree just in time.",
     "HealthModifier": -10,
     "ArmorModifier": -15,
-    "FoodModifier": 0,
+    "FoodModifier": -5,
     "Type": 2
   },
   {
@@ -108,7 +108,7 @@
     "Description": "Your journey is going smoothly.",
     "HealthModifier": 0,
     "ArmorModifier": 0,
-    "FoodModifier": 0,
+    "FoodModifier": -5,
     "Type": 0
   },
   {
@@ -116,7 +116,7 @@
     "Description": "An evil Witch puts an evil spell on you!",
     "HealthModifier": -10,
     "ArmorModifier": 0,
-    "FoodModifier": 0,
+    "FoodModifier": -5,
     "Type": 2
   },
   {
@@ -132,7 +132,7 @@
     "Description": "You throw a coin in a fortune well. You start feeling very good and healthy all of a sudden...",
     "HealthModifier": 15,
     "ArmorModifier": 0,
-    "FoodModifier": 0,
+    "FoodModifier": -5,
     "Type": 1
   },
   {
@@ -140,7 +140,7 @@
     "Description": "You continue on your journey. Everything is aye okay.",
     "HealthModifier": 0,
     "ArmorModifier": 0,
-    "FoodModifier": 0,
+    "FoodModifier": -5,
     "Type": 0
   },
   {
@@ -172,7 +172,7 @@
     "Description": "The ground shakes. You are actually walking on a sleeping troll. He hits you in his sleep.",
     "HealthModifier": -10,
     "ArmorModifier": -20,
-    "FoodModifier": 0,
+    "FoodModifier": -5,
     "Type": 2
   },
   {
@@ -180,7 +180,7 @@
     "Description": "You walk accross a Graveyard. Ninja Ghosts come out of the graves. You can't fight them. You run.",
     "HealthModifier": -15,
     "ArmorModifier": -10,
-    "FoodModifier": 0,
+    "FoodModifier": -5,
     "Type": 2
   },
   {
@@ -196,7 +196,7 @@
     "Description": "A bard starts singing. He is so horrible that you bleed from your ears.",
     "HealthModifier": -10,
     "ArmorModifier": 0,
-    "FoodModifier": 0,
+    "FoodModifier": -5,
     "Type": 2
   },
   {
@@ -204,7 +204,7 @@
     "Description": "You step in a bear trap! It really hurts!",
     "HealthModifier": -10,
     "ArmorModifier": -5,
-    "FoodModifier": 0,
+    "FoodModifier": -5,
     "Type": 2
   },
   {
@@ -236,7 +236,7 @@
     "Description": "While looking for directions from a tree, you fall down and injure your leg.",
     "HealthModifier": -10,
     "ArmorModifier": -5,
-    "FoodModifier": 0,
+    "FoodModifier": -5,
     "Type": 2
   }
 ]

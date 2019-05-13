@@ -13,7 +13,7 @@ namespace AdventureGame
     {
         static void Main(string[] args)
         {
-            string eventsPath = @"C:\Users\code\AdventureGame\Services\events.json";
+            string eventsPath = @"C:\Users\marko\Desktop\MyApps\VisualStudio\AdvancedC#\AdventureGame-C-\Services\events.json";
             string serializedEvents;
             using (StreamReader sr = new StreamReader(eventsPath))
             {
@@ -22,9 +22,7 @@ namespace AdventureGame
 
             GameService gs = new GameService(serializedEvents);
             gs.StartGame();
-            
-
-            
+                        
             Console.ReadKey();
         }
     }

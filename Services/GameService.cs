@@ -29,10 +29,11 @@ namespace Services
             }
         }
 
+        private char answer;
         private List<Event> _events;
         private Random _rnd = new Random();
         private int _rolledDice;
-        private Hero _jack = new Hero(60, 40, 60);
+        private Hero _jack = new Hero(60, 40, 20);
 
         public GameService(string serializedEvents)
         {
@@ -44,10 +45,14 @@ namespace Services
             _jack.CurrentPoint = 0;
             _jack.Health = 60;
             _jack.Armor = 40;
-            _jack.Food = 60;
+            _jack.Food = 20;
 
             Console.WriteLine("Press Any key to start");
             Console.ReadKey();
+            Console.WriteLine($@"Health: {_jack.Health}
+Armor: {_jack.Armor}
+Food: {_jack.Food}");
+
             while(_jack.CurrentPoint < 30)
             {
                 RollDice();
@@ -59,15 +64,26 @@ namespace Services
 
             Console.WriteLine("Press any key to roll the dice!");
             if (Console.ReadLine() == "aspirin") _jack.Health = 999;
-            _rolledDice = _rnd.Next(1, 7);            
+            _rolledDice = _rnd.Next(1, 4);            
             _jack.CurrentPoint += _rolledDice;
             if (_jack.CurrentPoint < 30) TriggerEvent(_events[_jack.CurrentPoint - 1]);
             else
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("YOU HAVE WON!!!!");
                 Console.WriteLine("Play Again? (y/n)");
-                if (Console.ReadKey().KeyChar == 'y') StartGame();
-                else Console.WriteLine("guess not");
+                Console.ResetColor();
+                answer = Console.ReadKey().KeyChar;
+                if (answer == 'y' || answer == 'Y')
+                {
+                    Console.Clear();
+                    StartGame();
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("guess not");
+                }
             }
 
         }
@@ -117,27 +133,32 @@ namespace Services
             }
             else _jack.Food += ev.FoodModifier;
 
+            if (_jack.Armor < 0) _jack.Armor = 0;
+            if (_jack.Food < 0) _jack.Food = 0;
+
             Console.WriteLine($@"Curret Health: {_jack.Health}
 Current Armor: {_jack.Armor}
 Current Food: {_jack.Food}
-Curretn Point: {_jack.CurrentPoint}");
+Current Point: {_jack.CurrentPoint}");
 
-            if(_jack.Health <= 0)
+            if (_jack.Health <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("YOU HAVE DIED!!!");
                 Console.WriteLine("Play Again? (Y/N)");
-                if (Console.ReadKey().KeyChar == 'y') StartGame();
-                else Console.WriteLine("guess not");
-            } else if(_jack.CurrentPoint >= 30)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("YOU HAVE WON!!!");
-                Console.WriteLine("Play Again? (Y/N)");
-                if (Console.ReadKey().KeyChar == 'y') StartGame();
-                else Console.WriteLine("guess not");
-            }
-            Console.ResetColor();
+                Console.ResetColor();
+                answer = Console.ReadKey().KeyChar;
+                if (answer == 'y' || answer == 'Y')
+                {
+                    Console.Clear();
+                    StartGame();
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("guess not");
+                }
+            }          
         }
     }
 }
